@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel OASA - Mobile</title>
+<style>
+body {font-family: Arial; margin:0; background:#eef4f7;}
+header{background: linear-gradient(90deg,#003854,#12CDFF); color:white; padding:12px; text-align:center;}
+header h2{margin:5px 0 0 0;font-size:18px;}
+.sub{font-size:12px;}
+.tabs{display:flex; flex-wrap:wrap;}
+.tab{flex:1;padding:12px;text-align:center;background:#dfeaf1;cursor:pointer;font-weight:bold;font-size:14px;}
+.tab.active{background:white;border-bottom:3px solid #12CDFF;}
+.content{display:none;padding:15px;text-align:center;}
+.content.active{display:block;}
+.link-btn{display:block;width:95%;max-width:420px;margin:8px auto;padding:16px;background:#003854;color:white;text-decoration:none;border-radius:12px;font-size:15px;}
+.link-btn:active{background:#12CDFF;color:#003854;}
+</style>
+</head>
+<body>
+<header>
+<h2>Painel OASA</h2>
+<div class="sub">Operação & Análise</div>
+</header>
+
+<div class="tabs">
+<div class="tab active" onclick="openTab('form')">Formulários</div>
+<div class="tab" onclick="openTab('relatorios')">Relatórios</div>
+</div>
+
+<div id="form" class="content active">
+<a class="link-btn" href="https://forms.office.com/r/j3Zh6Sfy3P" target="_blank">Todos os Sistemas OASA</a>
+<a class="link-btn" href="https://apps.powerapps.com/play/e/default-5f9d74c8-ec92-4488-a2c7-bdce634262fa/a/8b1bf59e-f217-49d7-8752-37915718c73b" target="_blank">Power Apps | App - Registro de Medições</a>
+<a class="link-btn" href="https://forms.office.com/r/6YrG3QZyMS" target="_blank">Chamados CAU</a>
+<a class="link-btn" href="https://sabespcloud.sharepoint.com/:l:/s/OPOA/JAB8HaRqy_L4Q6C6rd6eAZnTARU_6lxoQeIkVBwCVN0TY5E?nav=YjlkZTFlYjItYzllZi00ZDYwLTk0NTYtNDQ3NGZmZTFjNjY5" target="_blank">Chamados Facilites</a>
+<a class="link-btn" href="https://forms.office.com/r/uyaM5zT4Mb" target="_blank">Consumo de Produtos Químicos</a>
+<a class="link-btn" href="https://forms.office.com/r/4NvSK1iJhZ" target="_blank">Níveis Poços</a>
+</div>
+
+<div id="relatorios" class="content">
+<a class="link-btn" href="https://app.powerbi.com/groups/me/reports/40d3f4f5-f8cd-41a5-9436-651bc8280c37/7ab48922758d07d10000?experience=power-bi" target="_blank">AnaliseDadosOASA</a>
+<a class="link-btn" href="https://app.powerbi.com/groups/me/reports/a0161d53-8de6-436c-a4c4-192862a7602c/ea8079e3e10a8777a365?experience=power-bi" target="_blank">Controle OASA</a>
+<a class="link-btn" href="https://app.powerbi.com/groups/me/reports/dfe2fc81-db81-48d4-9c47-a87ff730f35e/024b49449105911e04ad?experience=power-bi" target="_blank">Relatorio OP OASA</a>
+</div>
+
+<script>
+function openTab(tabId){
+let tabs=document.querySelectorAll('.tab');
+let contents=document.querySelectorAll('.content');
+
+tabs.forEach(t=>t.classList.remove('active'));
+contents.forEach(c=>c.classList.remove('active'));
+
+event.target.classList.add('active');
+document.getElementById(tabId).classList.add('active');
+}
+</script>
+</body>
+</html>
